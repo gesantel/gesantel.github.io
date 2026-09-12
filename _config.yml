@@ -116,8 +116,8 @@ analytics:
 # Site Author
 author:
   name             : "George Santellano"
-  avatar           : "/assets/images/profile_photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD Mathematician, strong believer in the Growth Mindset and human connection for wellbeing. Machine Learning and Data Science practitioner with a specialty for breaking problems with first principles"
+  avatar           : "/assets/images/profile_picture.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "PhD Mathematician, strong believer in the Growth Mindset and Therapy. Machine Learning and Data Science practitioner with a first principles approach."
   location         : "San Diego, CA"
   email            : "gsantellano@gmail.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
