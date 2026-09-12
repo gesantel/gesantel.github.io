@@ -1,5 +1,11 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-include-cache", group: :jekyll_plugins
+
+# Essential plugins for standard GitHub Pages compatibility
+group :jekyll_plugins do
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-include-cache"
+  gem "jekyll-feed"
+end
