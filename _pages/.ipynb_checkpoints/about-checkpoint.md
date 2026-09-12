@@ -15,17 +15,11 @@ PhD Mathematician with a specialty for breaking problems down from first princip
 - **Data & Visualization::** Google Sheets, Excel, Matplotlib, Seaborn, Tableau, Google BigQuery
 - **Platforms::** Docker, Google Cloud Run, Github/Git, Linux/command line, Google Cloud, Streamlit, Hugging Face
 
-## Experience
-
-*(Add roles, degrees, or research positions here — one entry per position, most recent first.)*
-
 **PhD, Mathematics** — [University of California, Riverside], [2025]
 We show that like the classical Schur algebra, the matroidal Schur algebra has restriction functors, and the restriction multiplicities of simple modules under these functors have a combinatorial formula. We enumerate these restriction multiplicities using no-broken-circuit-bases.
 
 **MA, Mathematics** — [University of Pennsylvania], [2020]
 **BS, Applied Mathematics, Cognitive Science** — [University of California, San Diego], [2014]
-
-<!-**[Job Title]** — [Company/Institution], [Year–Year] One or two lines on what you did and the impact it had. -->
 
 ## Linkedin
 
@@ -34,3 +28,7 @@ We show that like the classical Schur algebra, the matroidal Schur algebra has r
 ## Get in Touch
 
 Feel free to reach out via [email](mailto:gsantellano@gmail.com) or connect on [GitHub](https://github.com/gesantel).
+
+## Book Recommendations
+
+[A Mind for Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)](https://www.amazon.com/dp/039916524X?lv=shuf&channelId=500&plpRedirect=mhFallback)
