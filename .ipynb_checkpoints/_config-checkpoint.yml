@@ -114,12 +114,12 @@ analytics:
 
 
 # Site Author
-author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+author: "George Santellano"
+  name             : "George Santellano"
+  avatar           : "/assets/images/profile_photo.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "PhD Mathematician, strong believer in the Growth Mindset and human connection for wellbeing. Machine Learning and Data Science practitioner with a specialty for breaking problems with first principles"
+  location         : "San Diego, CA"
+  email            : "gsantellano@gmail.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "Email"
@@ -136,7 +136,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+       url: "https://github.com/gesantel"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -153,7 +153,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      # url: "https://github.com/gesantel"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
