@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
- remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme            : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "catppuccin_latte", "catppuccin_mocha"
 
 # Site Settings
@@ -68,8 +68,8 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   :  true #, false (default)
-search                   :  true, false (default)
+  hide                   : true #, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 lunr:
@@ -114,10 +114,10 @@ analytics:
 
 
 # Site Author
-author: "George Santellano"
+author:
   name             : "George Santellano"
-  avatar           : "/assets/images/profile_photo.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD Mathematician, strong believer in the Growth Mindset and human connection for wellbeing. Machine Learning and Data Science practitioner with a specialty for breaking problems with first principles"
+  avatar           : "/assets/images/profile_picture.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "PhD Mathematician, strong believer in the Growth Mindset and Therapy. Machine Learning and Data Science practitioner with a first principles approach."
   location         : "San Diego, CA"
   email            : "gsantellano@gmail.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
@@ -136,7 +136,7 @@ author: "George Santellano"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-       url: "https://github.com/gesantel"
+      url: "https://github.com/gesantel"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -319,6 +319,12 @@ compress_html:
     envs: development
 
 
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+    
 # Defaults
 defaults:
   # _posts
@@ -332,4 +338,13 @@ defaults:
       comments: # true
       share: true
       related: true
-
+    # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      related: false
+ 
