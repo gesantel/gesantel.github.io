@@ -17,7 +17,9 @@ PhD Mathematician with a specialty for breaking problems down from first princip
 
 **PhD, Mathematics** — University of California, Riverside, 2025
 
-We show that like the classical Schur algebra, the matroidal Schur algebra has restriction functors, and the restriction multiplicities of simple modules under these functors have a combinatorial formula. We enumerate these restriction multiplicities using no-broken-circuit-bases.
+Thesis:[Littlewood-Richardson Coefficients and Restriction Functors for Matroidal Schur Algebras Restriction.](https://escholarship.org/uc/item/8v306783)
+
+Abstract: We show that like the classical Schur algebra, the matroidal Schur algebra has restriction functors, and the restriction multiplicities of simple modules under these functors have a combinatorial formula. We enumerate these restriction multiplicities using no-broken-circuit-bases.
 
 **MA, Mathematics** — University of Pennsylvania, 2020
 
