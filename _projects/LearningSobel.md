@@ -22,7 +22,7 @@ learned representations
 Transformers preformed so poorly with just the 3x3 Sobel kernel with no noise (and took SO long to train) that I decided not to evaluate it on a the parameter space of varied noise and kernel size. Our Transformer used self-attention to learn the relationship between pixels. However, sequences of pixel values share no inherent relationship in the way language does. More precisely, in language, meaning is context dependent and each word in a sentence contributes to the overall meaning. For images, patterns are local and outside of these neighborhoods, there is no relationship. Therefore, this architecture is making an assumption in the data to build a model and, as a result, performs poorly.
 
 <p align="center">
-<img src="/assets/images/transformer_recovery.jpg" alt="Transformer Recovery" width="200">
+<img src="/assets/images/transformer_recovery.jpg" alt="Transformer Recovery" width="300">
 </p>
 When the signal is distorted by Gaussian noise with standard deviation > .150, it becomes unrecoverable for our MLP. The Sobel kernel action being a linear transformation means the MLP learns the kernel well until we add noise. Since a linear transformation is defined by its inputs and outputs, the more noise we add to the signal, the more we distort the mapping. Our MLP also has no smoothing or denoising and so as complexity and distortion increases, its ability to recover the kernel decreases proportionally.
 
