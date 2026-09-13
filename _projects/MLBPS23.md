@@ -9,16 +9,14 @@ classes: compact-text
 
 ## Overview
 
-What fueled the 2023 Arizona Diamondbacks' cinderella run to the World Series? More generally, what hitting philosophy was most effective in the MLB PostSeason that year?
-
-We answered these questions and more, built a full random forest regressor ML pipeline to predict runs, and we deployed our model publically.  
+What fueled the 2023 Arizona Diamondbacks' cinderella run to the World Series? More generally, what hitting philosophy was most effective in the MLB PostSeason that year? We answered these questions and more, built a full random forest regressor ML pipeline to predict runs, and we deployed our model publically.  
 
 
 ## Approach
 
 - Cleaned and validated data using google sheets, explored data by building visualizations using matlotlib, seaborn, correlation heatmaps, and built an interactive dashboard on Tableau. Built a full data processing pipeline for a Random Forest Regressor model. Evaluated model using mean squared error.
 - Target variable was runs. Chose to use mean squared error as the loss function because runs are usually small nonnegative integers less than 15 so it is important to be accurate and penalize outlying predictions. My training RMSE was about 1.38. Validated model on 2025 postseason data resulting in RMSE of 1.73.
-- 
+
 - Tools/libraries: Python, scikit-learn, Pandas, Seaborn, Numpy, matplotlib, Docker, FastAPI, Google Cloud Run
 
 ## Summary of Results
