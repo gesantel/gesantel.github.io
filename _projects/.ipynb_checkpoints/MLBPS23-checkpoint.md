@@ -30,3 +30,11 @@ This model is deployed as a REST API on Google Cloud Run. You can explore the in
 ## Code
 
 Full code, setup instructions, and technical details are in the [GitHub repository]({{ page.github }}).
+
+.compact-text {
+  font-size: 0.85em;
+
+  h1, h2, h3 {
+    font-size: 0.9em;
+  }
+}

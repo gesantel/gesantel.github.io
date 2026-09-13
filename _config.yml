@@ -338,6 +338,7 @@ defaults:
       comments: # true
       share: true
       related: true
+      classes: compact-text
     # _projects
   - scope:
       path: ""
