@@ -3,7 +3,7 @@ title: "MLB Hitting Philosophy for PostSeason Success"
 excerpt: "One or two sentence summary of the problem this project solves."
 header:
   teaser: /assets/images/example-project-thumbnail.jpg
-github: "https://github.com/gesantel/example-repo"
+github: "https://github.com/gesantel/MLBPS23"
 ---
 
 ## Overview
