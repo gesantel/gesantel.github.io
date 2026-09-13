@@ -9,10 +9,10 @@ classes: compact-text
 
 
 ## Overview
-Sobel filter recovery under added Gaussian noise. Testing inductive bias of transfomer, MLP, and CNN architectures.
+Sobel filter recovery under added Gaussian noise. Testing inductive bias of transformer, MLP, and CNN architectures.
 
 ## Approach
-- Dataset choice was MNIST dataset. Sobel filter and Gaussian noise applied to training dataset. Architectures then trained and generate prediction on unaltered dataset. Prediction is evaluated against true convolved image (sobel operaterator(image)) using MSE. Visualizations show differences in
+- Dataset choice was MNIST dataset. Sobel filter and Gaussian noise applied to training dataset. Architectures then trained and generate prediction on unaltered dataset. Prediction is evaluated against true convolved image (sobel operator(image)) using MSE. Visualizations show differences in
 learned representations
 - MNIST images were chosen to avoid adding any complexity from the images themselves. This decision was made to isolate the inductive bias of each architecture. MSE was chosen as our loss function because we wanted to converge to the pixel values. As such, you want your loss function to punish predictions further away from the mean (outliers), and this is what MSE does.
   
