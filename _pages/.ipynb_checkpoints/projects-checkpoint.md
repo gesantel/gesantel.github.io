@@ -3,6 +3,7 @@ layout: single
 title: "Projects"
 permalink: /projects/
 author_profile: true
+classes: compact-text
 ---
 
 A collection of Machine Learning and Data Science projects. Each write-up covers the problem, my approach, and key results — click through to the GitHub repo for full code and details.
