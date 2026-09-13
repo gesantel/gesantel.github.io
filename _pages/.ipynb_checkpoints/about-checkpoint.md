@@ -7,7 +7,7 @@ author_profile: true
 
 ## Background
 
-PhD Mathematician with a specialty for breaking problems down from first principles. Strong believer in the growth mindset and human connection for wellbeing. I work in Machine Learning and Data Science, focused on turning ambiguous, messy problems into concrete, testable steps using first principles. Originally a Cognitive Science major first (before declaring math as a second), I love learning about the mind and behavior. Former college lacrosse player and avid weight lifter. 
+PhD Mathematician with a specialty in Graph Theory and Representation Theory. Strong believer in growth mindset. I work in Machine Learning and Data Science, focused on turning ambiguous, messy problems into concrete, testable steps using first principles. Originally a Cognitive Science major (before declaring math as a second), I am fascinated by the mind. Former college lacrosse player and avid weight lifter. 
 
 ## Skills
 - **Programming:** Python, SQL, MATLAB, R, C
