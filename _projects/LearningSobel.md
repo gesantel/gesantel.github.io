@@ -1,6 +1,7 @@
 ---
 title: "Sobel Filter Recovery and Inductive Bias of Three Architectures"
-excerpt: "One or two sentence summary of the problem this project solves."
+excerpt: " Testing inductive bias of transformer, MLP, and CNN architectures.
+Which is better suited to recover the Sobel Filter?"
 header:
   teaser: /assets/images/example-project-thumbnail.jpg
 github: "https://github.com/gesantel/LearningSobel"

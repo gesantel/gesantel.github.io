@@ -1,6 +1,6 @@
 ---
 title: "MLB Hitting Philosophy for PostSeason Success"
-excerpt: "One or two sentence summary of the problem this project solves."
+excerpt: "What fueled the 2023 Arizona Diamondbacks' cinderella run to the World Series? More generally, what hitting philosophy was most effective in the MLB PostSeason that year? Answers and a publically deployed model."
 header:
   teaser: /assets/images/example-project-thumbnail.jpg
 github: "https://github.com/gesantel/MLBPS23"
