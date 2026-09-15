@@ -29,15 +29,15 @@ Abstract: We show that like the classical Schur algebra, the matroidal Schur alg
 **BS, Applied Mathematics, Cognitive Science** — University of California, San Diego, 2014
 
 ## Professional Experience
-**Independent Consultant** 
+**Independent Consultant**, July 2026 - Present
 - Model and Data Drift Evaluation : Diagnose model degradation using Evidently. Resolve or submit request to data engineer for schema or formatting changes. Collaborate with ML ops to recommend or modify rule-based checks and retraining schedule. Evaluating canaried retrained models. 
 - End-to-End Data Consulting: Architect comprehensive Scopes of Work (SOW), data processing using Google Sheets or BigQuery, and deliver actionable business insights via Tableau and Google Slides.
   
-**AI Trainer, Handshake AI**
+**AI Trainer, Handshake AI**, February 2026 - June 2026
 - Validated LLM outputs on graduate-level mathematical proofs for correctness, clarity, and rigor.
 - Recognized by project managers for output, attention to detail, and breadth of subject-matter expertise.
   
-**Senior Ops Analyst, Zenefits**
+**Senior Ops Analyst, Zenefits**, October 2014 - June 2016
 - Automated waiver collection and processing with Python scripting, replacing two contractors and saving $80,000 per
 year.
 - Provided data-informed business recommendations to c-suite using SQL-based visualizations and Google Sheets.
@@ -46,17 +46,17 @@ year.
 - Managed technical relationships with external partners and maintained data integration pipelines.
 
 ## Teaching Experience
-**Lecturer (Contract), UC Riverside**
+**Lecturer (Contract), UC Riverside**, March 2026 - June 2026
 - Designed and delivered lectures three times weekly across 3 undergraduate courses to 600+ diverse students.
 - Managed 8 teaching assistants, including mediating conflict, and developing performance improvement plans.
 - Wrote original final exams and managed student accommodations and concerns in collaboration with faculty.
   
-**Graduate Teaching Assistant /Associate Instructor , UC Riverside**
+**Graduate Teaching Assistant /Associate Instructor , UC Riverside**, September 2020 - August 2025
 - Led discussion for undergraduate mathematics courses; communicated abstract and technical concepts clearly to diverse student populations.
 - Mentored students, managed academic accommodations, and provided individualized support.
 - **Winner Math Department Outstanding Teaching Award for 2024-2025.**
   
-**Remedial Math Instructor , San Francisco State University Aug 2016 – May 2018**
+**Remedial Math Instructor , San Francisco State University**, August 2016 – May 2018
 - Taught remedial mathematics courses, building foundational skills for students transitioning into college-level coursework.
 
 ## Linkedin
