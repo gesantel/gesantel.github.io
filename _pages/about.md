@@ -14,7 +14,7 @@ PhD Mathematician with a specialty in Graph Theory and Representation Theory. St
 - **Programming:** Python, SQL, MATLAB, R, C
 - **Machine Learning:** PyTorch, Scikit-learn, NumPy, Pandas, FastAI
 - **Data & Visualization::** Google Sheets, Excel, Matplotlib, Seaborn, Tableau, Google BigQuery
-- **Platforms::** Docker, Google Cloud Run, Github/Git, Linux/command line, Google Cloud, Streamlit, Hugging Face
+- **Platforms::** Docker, Evidently AI, Google Cloud Run, Github/Git, Linux/command line, Google Cloud, Streamlit, Hugging Face
 
 **PhD, Mathematics** — University of California, Riverside, 2025
 
@@ -25,6 +25,11 @@ Abstract: We show that like the classical Schur algebra, the matroidal Schur alg
 **MA, Mathematics** — University of Pennsylvania, 2020
 
 **BS, Applied Mathematics, Cognitive Science** — University of California, San Diego, 2014
+
+## Resume
+<embed src="/assets/resume/Santellano_George_Resume_09152026.pdf" type="application/pdf" width="100%" height="600px" />
+
+
 
 ## Linkedin
 
