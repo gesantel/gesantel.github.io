@@ -8,7 +8,7 @@ classes: compact-text
 
 ## Background
 
-PhD Mathematician with a specialty in Graph Theory and Representation Theory. Strong believer in growth mindset. I work in Machine Learning and Data Science, focused on turning ambiguous, messy problems into concrete, testable steps using first principles. Originally a Cognitive Science major (before declaring math as a second), I am fascinated by the mind. Former college lacrosse player and avid weight lifter. 
+PhD Mathematician with a specialty in Graph Theory and Representation Theory. Strong believer in growth mindset. I work in Machine Learning and Data Science, focused on turning ambiguous, messy problems into concrete, testable steps using first principles. Originally a Cognitive Science major (before declaring math as a second), I am fascinated by the mind. Former college lacrosse player and avid weight lifter. I love vietnamese iced coffee and I collect mugs from coffee shops.
 
 ## Skills
 - **Programming:** Python, SQL, MATLAB, R, C
