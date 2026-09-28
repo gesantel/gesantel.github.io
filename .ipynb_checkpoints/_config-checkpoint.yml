@@ -107,11 +107,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google-gtag"
   google:
-    tracking_id          :
-    anonymize_ip         : # true, false (default)
-
+    tracking_id: "G-WE3WQ4H4B3"   # your real ID here
+    anonymize_ip: false
 
 # Site Author
 author:
