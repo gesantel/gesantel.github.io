@@ -25,8 +25,8 @@ The chirp duration is also referred to as chirp time and we will denote it by $$
 $$\text{Bandwidth } (B) = \text{Chirp time } (t_c) \times \text{Chirp Slope } (S)$$. 
 
 Moreover, let $$f_c$$ be the starting (or carrier) frequency of the chirp, and $$0 \leq t \leq t_c$$ be the elapsed time since start of chirp, then the instantaneous frequency $$f(t)$$ at any point during the chirp is $$f(t) = f_c + S \cdot t$$. At time $$t = t_c$$, $$f(t_c) = f_{\text{max}}$$ our maximum frequency (by linear increasing relationship). For example, if $$f_c = 77\text{ GHz}$$, $$t_c = 40\mu\text{s}$$, $$ B = 1.5 GHz$$ then 
-$$S = \frac{1.5~GHz/}{40~\mu s/} = 37.5~MHz/\mu s$$, and 
-$$f_max = f_c + B = 77~GHz\ + 1.5~GHz\ = 78.5~GHz\ $$
+$$S = \frac{1.5~GHz}{40~\mu s} = 37.5~MHz\mu s$$, and 
+$$f_max = f_c + B = 77~GHz + 1.5~GHz = 78.5~GHz$$
 
 
 
