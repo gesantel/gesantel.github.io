@@ -5,6 +5,7 @@ header:
   teaser: /assets/images/example-project-thumbnail.jpg
 github: "https://github.com/gesantel/DopplerNet"
 classes: compact-text
+mathjax: true
 ---
 
 ## FMCW Radar Background
