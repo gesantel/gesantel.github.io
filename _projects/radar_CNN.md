@@ -9,11 +9,11 @@ mathjax: true
 ---
 
 ## FMCW Radar Background
-FMCW stands for frequency modulated continuous wave. The name comes from the chirp transmitted by FMCW radars. A chirp is a continuous wave whose frequency is linearly modulated. In particular, a chirp is a sinusoidal wave. 
+FMCW stands for frequency modulated continuous wave. The name comes from the chirp transmitted by FMCW radars. A chirp is a continuous wave whose frequency is linearly modulated. In particular, a chirp is a sinusoid whose frequency sweeps linearly in time. 
 <p align="center">
 <img src="/assets/images/FMCW_radar_diagram.drawio.png" alt="FMCW Diagram" width="600">
 </p>
-We will use the diagram above to understand how FMCW radars work. First, a synth/LO generates a chirp. The chirp is transmitted by the TX antenna. A chirp is then reflected by an object and received by the RX antenna(s). The received (by the RX ant.) chirp and transmitted (by the TX ant.) chirp is mixed in the mixer, resulting in an IF signal. From there the signal passes through a low pass filter which removes high frequency tones. The signal then continues to the ADC (analog-to-digital converter) for sampling. The ADC takes the IF signal (our continous analog signal from the real world), and samples it at specific time intervals, discretizing the signal into data we can perform calculations on. From there our discretized data goes to a DSP (digital signal processor) which can apply mathematical transformations like scaling, compression, and Fourier Transform. Fast Fourier Transform (FFT) is an optimized algorithm for computing a Fourier Transform; It is commonly used in signal processing. When we say Fourier Transform below, we mean FFT. We will now expand a bit on the finer details.
+We will use the diagram above to understand how FMCW radars work. First, a synth/LO generates a chirp. The chirp is transmitted by the TX antenna. A chirp is then reflected by an object and received by the RX antenna(s). The received (by the RX ant.) chirp and transmitted (by the TX ant.) chirp is mixed in the mixer, resulting in an IF signal. From there the signal passes through a low pass filter which removes high frequency tones. The signal then continues to the ADC (analog-to-digital converter) for sampling. The ADC takes the IF signal (our continuous analog signal from the real world), and samples it at specific time intervals, discretizing the signal into data we can perform calculations on. From there our discretized data goes to a DSP (digital signal processor) which can apply mathematical transformations like scaling, compression, and Fourier Transform. Fast Fourier Transform (FFT) is an optimized algorithm for computing a Fourier Transform; It is commonly used in signal processing. When we say Fourier Transform below, we mean FFT. We will now expand a bit on the finer details.
 
 The chirp duration is also referred to as chirp time and we will denote it by $$t_c$$. The Bandwidth of an FMCW radar chirp we will denote by $$B$$. Plotting frequency over time, we have a linear relationship between chirp slope $$S$$, $$B$$, and $$t_c$$. 
 
@@ -22,10 +22,13 @@ The chirp duration is also referred to as chirp time and we will denote it by $$
 <img src="/assets/images/SBF.png" alt="Slope Diagram" width="200">
 </p>
 
-$$\text{Bandwidth } (B) = \text{Chirp time } (t_c) \times \text{Chirp Slope } (S)$$. Moreover, let $$f_c$$ be the starting (or carrier) frequency of the chirp, and $$0 \leq t \leq t_c$$ be the elapsed time since start of chirp, then the instantaneous frequency $$f(t)$$ at any point during the chirp is $$f(t) = f_c + S \cdot t$$. At time $$t = t_c$$, $$f(t_c) = f_{\text{max}}$$ our maximum frequency (by linear increasing relationship). For example, if $$f_c = 77\text{ GHz}$$, $$t_c = 40\mu\text{s}$$, then $$f(t_c) = f_c + S \cdot t_c = f_c + B = f_{\text{max}}$$.
+$$\text{Bandwidth } (B) = \text{Chirp time } (t_c) \times \text{Chirp Slope } (S)$$. 
+
+Moreover, let $$f_c$$ be the starting (or carrier) frequency of the chirp, and $$0 \leq t \leq t_c$$ be the elapsed time since start of chirp, then the instantaneous frequency $$f(t)$$ at any point during the chirp is $$f(t) = f_c + S \cdot t$$. At time $$t = t_c$$, $$f(t_c) = f_{\text{max}}$$ our maximum frequency (by linear increasing relationship). For example, if $$f_c = 77\text{ GHz}$$, $$t_c = 40\mu\text{s}$$, $$ B = 1.5 GHz$$ then 
+$$S = \frac{1.5~GHz/}{40~\mu s/} = 37.5~MHz/\mu s$$, and 
+$$f_max = f_c + B = 77~GHz\ + 1.5~GHz\ = 78.5~GHz\ $$
 
 
-Check
 
 ## Overview
 
