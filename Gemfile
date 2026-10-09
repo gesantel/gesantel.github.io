@@ -1,8 +1,13 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+gem "webrick", "~> 1.8"
 
-# Essential plugins for standard GitHub Pages compatibility
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+
 group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-gist"
@@ -11,4 +16,3 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-feed"
 end
-
