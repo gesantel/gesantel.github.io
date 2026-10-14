@@ -107,12 +107,7 @@ Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequen
 This process is extended easily for several objects. Suppose there are three objects at ranges $$R_1$$, $$R_2$$, and $$R_3.$$ Each object will reflect the TX chirp with its own delay, tone frequency, and phase, and the mixer output is the sum of the three tones. Since the FFT is linear, the spectrum of a sum is the sum of the spectra. Each tone contributes its own peak. If any two objects are less than the range resolution apart, their peaks merge to one peak. Otherwise, each peak will represent one object. In this example, three objects at ranges $$R_1$$, $$R_2$$, and $$R_3$$. 
 
 
-
-
-
-
-# Range Resolution
-
+# Doppler FFT
 
 
 
@@ -126,7 +121,16 @@ Let $$f$$ be the frequency in cycles per second (Hz) and $$\omega$$ the angular 
 # Our Study
 
 ## Overview
+DopplerNet (Roldan et al., IET Radar Sonar Navig., 2020) proposed an embedded CNN architecture for real-time target identification. Their model is structured as follows: a first layer convolutional layer with kernel size 3 and 32 filters (out-channels) with a ReLu, a flattening layer, and a stack of dense (fully-connected) linear layers (three concatenated with ReLu functions, and the last with a softmax). They performed gridsearch paramter tuning on filters and kernel size. The [data]( https://www.kaggle.com/iroldan/real-doppler-raddar-database) is organized in folders as class(drone, person, drone)/(recording)session/frames. Each frame is an 11x61 range-Doppler grid converted to dbB. Roldan et al. stacks three (they tune this number well) frames as channels. 
 
+<p align="center">
+<img src="/assets/images/stacked.png" alt="range-doppler-stacked" width="300">
+</p>
+
+They normize their data to mean 0 and standard deviation 1, and they train using a random five-fold cross validation. They evaluate their model on Accuracy, Precision, recall, and compare across industry embedded systems by number of parameters. 
+<p align="center">
+<img src="/assets/images/paper_model_metrics.png" alt="roldan's-model-metrics" width="600">
+</p>
 ## Approach
 - 
 - 
