@@ -47,6 +47,7 @@ and
 $$f_{\max} = f_c + B = 77~\text{GHz} + 1.5~\text{GHz} = 78.5~\text{GHz}.$$
 So the chirp sweeps from $$77~\text{GHz}$$ to $$78.5~\text{GHz}$$. Shortly we will see the bandwidth $$B$$ sets how finely we can resolve range (tell two close objects apart).
 
+
 <!--
 The key observation is that frequency is proportional to range meaning that if we have sufficient range resolution, we can essentially decompose our IF signal into tones that correspond to targets, and their frequency will give us their range (distance from radar).
 
@@ -98,25 +99,16 @@ measures how much of the signal oscillates at frequency $$f_k = \frac{kf_s}{N}= 
 <img src="/assets/images/RFFT.png" alt="image showing beat frequency to RFFT" width="900">
 </p>
 
-A range-FFT is plotted with frequency bins (equivalently range bins) on the horizontal axis, and magnitude on the vertical axis. Since the samples are real-valued, their signal contains positive and negative frequencies with identical magnitudes, one falling in the first $$N/2$$ bins (frequencies up to $$f_s/2$$), and the other in the last $$N/2$$. This means that for real-valued samples the data is symmetric and as a result, only the first $$N/2$$ bins are plotted. Another type of sampling is called 
+A range-FFT is plotted with frequency bins (equivalently range bins) on the horizontal axis, and magnitude on the vertical axis. Since the samples are real-valued, their signal contains positive and negative frequencies with identical magnitudes, the positive falling in the first $$N/2$$ bins (frequencies up to $$f_s/2$$), and the other in the last $$N/2$$. This means that for real-valued samples the data is symmetric and as a result, only the first $$N/2$$ bins are plotted (to prevent false or "phantom" object detections). Another type of sampling is called I/Q sampling which stands for In-phase Quadrature. In IQ sampling, a dual-channel (or two) ADCs take in two streams of data: the in-phase or real part of the signal mixed with a standard cosine reference wave, and the quadrature, or the imaginary part of the signal mixed with a 90 degree phase-shifted sine reference wave. I/Q sampled data is complex and does not have the same symmetric or mirrored potential source of error. 
 
-Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequency $$ f_k = k/T$$. Adjacent bins are $$\frac{1}{T}$$ apart in frequency, which corresponds to $$\dfrac{c}{2ST}$$ in range. The latter value $$\dfrac{c}{2ST}$$ is radar's **range resolution**, the minimum distance seperation between objects along the same line of sight for the radar to distinguish between them. 
+Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequency $$ f_k = k/T$$. Adjacent bins are $$\frac{1}{T}$$ apart in frequency, which corresponds to $$\dfrac{c}{2ST}$$ in range. The latter value $$\dfrac{c}{2ST}$$ is radar's **range resolution**, the minimum distance of seperation required between objects along the same line of sight for the radar to distinguish between them. A tone at $$f_b$$ produces a peak centered near $$k \approx f_bT$$, with a height proportional to the tone's amplitude $$A$$. Since $$f_bT$$ is not neccessarily an integer, the peak usually falls between two bins and has energy that radiates across neighboring bins (spectral leakage). The mixed signal contains noise which shows as the flat, low, wiggly baseline between peaks. This is sometimes called the noise floor. 
+
+
+This process is extended easily for several objects. Suppose there are three objects at ranges $$R_1$$, $$R_2$$, and $$R_3.$$ Each object will reflect the TX chirp with its own delay, tone frequency, and phase, and the mixer output is the sum of the three tones. Since the FFT is linear, the spectrum of a sum is the sum of the spectra. Each tone contributes its own peak. If any two objects are less than the range resolution apart, their peaks merge to one peak. Otherwise, each peak will represent one object. In this example, three objects at ranges $$R_1$$, $$R_2$$, and $$R_3$$. 
 
 
 
-A tone at $$f_b$$ produces a peak across neighboring bins near index $$\cong f_b T$$ since $$f_bT$$ need not be an integer. Since the ADC samples are real-valued,  
 
-<!--
-
-The bandwidth $$B$$ determines the range resolution. A radar's **range resolution** is the system's ability to distinguish between two different targets located at the same angle from the radar, but at slightly different distances from it. If the distances between two objects is smaller than the range resolution of the radar, their signals overlap and appear as a single target in processing. We will explain why that is later. For now, let $$c = 3\times 10^8~\text{m/s}$$ be the **speed of light**,
-
-the **range resolution formula is** $$\Delta R = \frac{c}{2B}$$. For our example, the range resolution is 
-$$\Delta R = \frac{c}{2B} = \frac{3\times 10^8~\text{m/s}}{2(1.5\times 10^9~\text{Hz})} = .1 m$$.
-
-This means that objects within $$.1$$ meters will have signals that overlap too closely for to be seperated in processing, and are identified as one target. 
-
-For now, notice we can maintain the same bandwidth by increasing our chirp slope, which in turns means a shorter chirp time. These are all important considerations for trade-offs required by system limitations which we will expand on later. 
--->
 
 
 # Range Resolution
