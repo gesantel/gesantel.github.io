@@ -65,11 +65,47 @@ When the TX and RX chirps overlap, the beat frequency is constant and equals the
 
 Notice that to accurately measure the range of an object (for a range up to $$R_{\max}$$), the beat frequency of our farthest object, $$f_{b\max} = \dfrac{2SR_{\max}}{c}$$, must pass through the LP filter. So the filter's cutoff frequency, $$f_{LP}$$, must be at least $$f_{b\max}$$. 
 
-The ADC sampling rate is another limitation. The ADC measures the analog input voltage a fixed number of times per second. This rate, denoted $$f_s$$, is called the sampling rate and is given in samples per second (SPS), equivalently Hz. To avoid distortion called aliasing, $$f_s$$ must be more than twice the largest frequency that reaches the ADC, so we need $$f_s > 2 f_{b\max}$$ (the Nyquist condition). Aliasing occurs when a frequency above $$f_s/2$$ "folds" and appears as a lower frequency due to sampling rate being too low. A farther away target can show up at a false, closer range (depending on how far above $$f_s/2$$ the frequency is). In practice, the IF signal enters the LP filter before the ADC, so good practice sets the LP filter cutoff between the two limits: $$f_{b\max}\le f_{LP}< f_s/2$$. Since $$f_{b\max} = \frac{2SR_{\max}}{c}$$, the sampling rate limits the maximum range: $$R_{max} < \frac{f_s~c}{4S}.$$ This formula assumes real-valued sampling, which is consistent with the radar in the study we care about (8192 samples per chirps give 4096 range bins and the maximum beat frequency matches $$f_s/2 = $$.
+The ADC sampling rate is another limitation. The ADC measures the analog input voltage a fixed number of times per second. This rate, denoted $$f_s$$, is called the sampling rate and is given in samples per second (SPS), equivalently Hz. To avoid distortion called aliasing, $$f_s$$ must be more than twice the largest frequency that reaches the ADC, so we need $$f_s > 2 f_{b\max}$$ (the Nyquist condition). Aliasing occurs when a frequency above $$f_s/2$$ "folds" and appears as a lower frequency due to sampling rate being too low. A farther away target can show up at a false, closer range (depending on how far above $$f_s/2$$ the frequency is). In practice, the IF signal enters the LP filter before the ADC, so good practice sets the LP filter cutoff between the two limits: $$f_{b\max}\le f_{LP}< f_s/2$$. Since $$f_{b\max} = \frac{2SR_{\max}}{c}$$, the sampling rate limits the maximum range: $$R_{max} < \frac{f_s~c}{4S}.$$ This formula assumes real-valued sampling, which is consistent with the radar in the study we care about (8192 samples per chirps give 4096 range bins and the maximum beat frequency matches $$f_s/2$$.
 
 
 
-# Fourier Transform
+# Range/Range FFT
+The beat tone of an object at range $$R$$ exists only when the TX and RX chirps overlap. Precisely, for some time $$\tau \le t \le t_c$$ where $$\tau $$ is the time delay between TX and RX chirp. The ADC samples a window inside that overlap, taking $$N$$ samples at rate $$f_s$$. We define the observation window length $$T$$ as 
+
+$$T = \frac{N}{f_s}.$$
+
+To capture objects up to a range of $$\text{R}_{\max}$$, the observation window must occur after the longest delay $$\tau_{\max} = \frac{2R_{\max}}{c}$$, and end by $$t_c$$. During this window, the beat frequency is exactly $$f_b = S\tau$$, and the beat frequency changes by $$ST$$. We call $$B_T := ST$$ the **effective bandwidth** and it approximates $$B$$ for $$\tau_{\max} \ll t_c.$$
+
+A time domain sequence of voltage measurements is sampled from the beat frequency by the ADC. A Fourier transform converts this time domain sequence to the frequency domain. Since every object at range $$\text{R}$$ contributes a tone at beat frequency $$f_b = \frac{2SR}{C}$$, finding the frequencies present in the beat signal tells us the ranges present in the scene. 
+
+Suppose for simplicity there is only one object reflecting a chirp (at range $$R$$). In practice, a single target like a car is comprised of multiple objects that all contribute tones to the beat frequency. If the distance between target components is less than the range resolution, their peaks merge into one in the range FFT; if the components are further apart than the range resolution, they show up as individual peaks in the range FFT. We will talk about that soon. 
+
+Let $$t_0$$ be the ADC start time. The samples are taken at times $$t_n = t_0 + n/f_s$$ for $$n = 0,1,\dots, N-1$$. For the one object case, the sampled tone measured at time $$t_n$$ is given by
+
+$$x[n] = A\cos(2\pi f_b \frac{n}{f_s} + \phi_0),$$  
+
+where the constant phase absorbs the start time $$t_0$$.
+
+The FFT computes the discrete Fourier transform 
+
+$$X[k] = \sum_{n=0}^{N-1}x[n]e^\frac{-2\pi j k n}{N},$$
+
+for $$k = 0,1,\dots, N-1$$. Its magnitude, $$ \lvert X[k]\rvert$$,
+measures how much of the signal oscillates at frequency $$f_k = \frac{kf_s}{N}= \frac{k}{T}$$.
+
+
+<p align="center">
+<img src="/assets/images/RFFT.png" alt="image showing beat frequency to RFFT" width="900">
+</p>
+
+A range-FFT is plotted with frequency bins (equivalently range bins) on the horizontal axis, and magnitude on the vertical axis. Since the samples are real-valued, their signal contains positive and negative frequencies with identical magnitudes, one falling in the first $$N/2$$ bins (frequencies up to $$f_s/2$$), and the other in the last $$N/2$$. This means that for real-valued samples the data is symmetric and as a result, only the first $$N/2$$ bins are plotted. Another type of sampling is called 
+
+Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequency $$ f_k = k/T$$. Adjacent bins are $$\frac{1}{T}$$ apart in frequency, which corresponds to $$\dfrac{c}{2ST}$$ in range. The latter value $$\dfrac{c}{2ST}$$ is radar's **range resolution**, the minimum distance seperation between objects along the same line of sight for the radar to distinguish between them. 
+
+
+
+A tone at $$f_b$$ produces a peak across neighboring bins near index $$\cong f_b T$$ since $$f_bT$$ need not be an integer. Since the ADC samples are real-valued,  
+
 <!--
 
 The bandwidth $$B$$ determines the range resolution. A radar's **range resolution** is the system's ability to distinguish between two different targets located at the same angle from the radar, but at slightly different distances from it. If the distances between two objects is smaller than the range resolution of the radar, their signals overlap and appear as a single target in processing. We will explain why that is later. For now, let $$c = 3\times 10^8~\text{m/s}$$ be the **speed of light**,
