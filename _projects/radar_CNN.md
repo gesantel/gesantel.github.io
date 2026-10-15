@@ -8,6 +8,9 @@ classes: compact-text
 mathjax: true  
 --- 
   <br>
+
+To skip straight to my project, head down to "Our Study."
+  
 # FMCW Radar Background  
   
 FMCW stands for frequency modulated continuous wave. The name comes from the chirp transmitted by FMCW radars. A chirp is a continuous wave whose frequency is linearly modulated. In particular, a chirp is a sinusoid whose frequency sweeps linearly in time. 
@@ -101,7 +104,7 @@ measures how much of the signal oscillates at frequency $$f_k = \frac{kf_s}{N}= 
 
 A range-FFT is plotted with frequency bins (equivalently range bins) on the horizontal axis, and magnitude on the vertical axis. Since the samples are real-valued, their signal contains positive and negative frequencies with identical magnitudes, the positive falling in the first $$N/2$$ bins (frequencies up to $$f_s/2$$), and the other in the last $$N/2$$. This means that for real-valued samples the data is symmetric and as a result, only the first $$N/2$$ bins are plotted (to prevent false or "phantom" object detections). Another type of sampling is called I/Q sampling which stands for In-phase Quadrature. In IQ sampling, a dual-channel (or two) ADCs take in two streams of data: the in-phase or real part of the signal mixed with a standard cosine reference wave, and the quadrature, or the imaginary part of the signal mixed with a 90 degree phase-shifted sine reference wave. I/Q sampled data is complex and does not have the same symmetric or mirrored potential source of error. 
 
-Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequency $$ f_k = k/T$$. Adjacent bins are $$\frac{1}{T}$$ apart in frequency, which corresponds to $$\dfrac{c}{2ST}$$ in range. The latter value $$\dfrac{c}{2ST}$$ is radar's **range resolution**, the minimum distance of seperation required between objects along the same line of sight for the radar to distinguish between them. A tone at $$f_b$$ produces a peak centered near $$k \approx f_bT$$, with a height proportional to the tone's amplitude $$A$$. Since $$f_bT$$ is not neccessarily an integer, the peak usually falls between two bins and has energy that radiates across neighboring bins (spectral leakage). The mixed signal contains noise which shows as the flat, low, wiggly baseline between peaks. This is sometimes called the noise floor. 
+Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequency $$ f_k = k/T$$. Adjacent bins are $$\frac{1}{T}$$ apart in frequency, which corresponds to $$\dfrac{c}{2ST}$$ in range. The latter value $$\dfrac{c}{2ST} = \dfrac{c}{2B_T}$$ is the radar's **range resolution**, the minimum distance of seperation required between objects along the same line of sight for the radar to distinguish between them. A tone at $$f_b$$ produces a peak centered near $$k \approx f_bT$$, with a height proportional to the tone's amplitude $$A$$. Since $$f_bT$$ is not neccessarily an integer, the peak usually falls between two bins and has energy that radiates across neighboring bins (spectral leakage). The mixed signal contains noise which shows as the flat, low, wiggly baseline between peaks. This is sometimes called the noise floor. 
 
 
 This process is extended easily for several objects. Suppose there are three objects at ranges $$R_1$$, $$R_2$$, and $$R_3.$$ Each object will reflect the TX chirp with its own delay, tone frequency, and phase, and the mixer output is the sum of the three tones. Since the FFT is linear, the spectrum of a sum is the sum of the spectra. Each tone contributes its own peak. If any two objects are less than the range resolution apart, their peaks merge to one peak. Otherwise, each peak will represent one object. In this example, three objects at ranges $$R_1$$, $$R_2$$, and $$R_3$$. 
@@ -131,14 +134,17 @@ They normize their data to mean 0 and standard deviation 1, and they train using
 <p align="center">
 <img src="/assets/images/paper_model_metrics.png" alt="roldan's-model-metrics" width="600">
 </p>
+
 ## Approach
-- 
-- 
-- Tools/libraries: 
-## Summary of Results
+* **Data:** I follow the same set-up as DolpplerNet, stacking (across channels axis) three temporally adjacent frames (windows) to form (3,11,61) tensors so that the model can learn motion (micro-Doppler) patterns over time. Each frame is an 11x61 range-Doppler grid in dBm: the 11 range cells by 61 Doppler bins, cropped using CFAR detection. 
+* **Train and split:** I split train, validation, and test by (recording) session, not randomly. Since the windows overlap, a random split can leak near identical frames across across splits. Splitting at the session level is stricter and prevents this type of leakage.
+* **Preprocessing** A custom PyTorch `Dataset` builds sliding windows of consecutive frames, parses and normalizes each CSV once using training set statistics. 
+* **Models and Training:** I trained a 2.8M parameter CNN and a lightweight 40k parameter shallow CNN. Inputs are normalized with training statistics. I used cross entropy with class-balancing loss (Cui et al.), and used cross entropy with inverse-frequency class weighting as my baseline. I swept 12 Gaussian noise (Gaussian perturbation of dB values) and gain-shift ($$\pm 3 dB$$) augmentation parameter pairings, choosing the best by validation accuracy. I applied Adam optimizer (learning rate $$1e-3$$), batch size 64, 50 epochs, `ReduceLROnPlateau` scheduler (factor 0.5, patience 4), and fixed random seeds.
 
-
-
+## Results
+The deeper model reached 97.4% test accuracy (macro F1 .97), and the shallow one reached 97.1%, which is comparable with approximately 70x fewer parameters. A lightweight CNN model like I have proposed is valuable in a situation with limited processing resources. This improvement on training and drastic reduction on number of parameters is a good step towards lightweight embedded real-time object identification in limited processing resource situations.  
+## Tools/libraries
+Pytorch (torch, torch.nn, torch.optim, Dataset, and DataLoader). Numpy, Pandas, scikit-learn, Matplotlib, Jupyter Notebook. 
 
 
 ## Code
