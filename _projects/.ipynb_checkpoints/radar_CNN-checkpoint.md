@@ -86,7 +86,7 @@ Suppose for simplicity there is only one object reflecting a chirp (at range $$R
 
 Let $$t_0$$ be the ADC start time. The samples are taken at times $$t_n = t_0 + n/f_s$$ for $$n = 0,1,\dots, N-1$$. For the one object case, the sampled tone measured at time $$t_n$$ is given by
 
-$$x[n] = A\cos(2\pi f_b \frac{n}{f_s} + \phi_0),$$  
+$$x[n] = A\sin(2\pi f_b \frac{n}{f_s} + \phi_0),$$  
 
 where the constant phase absorbs the start time $$t_0$$.
 
@@ -110,8 +110,17 @@ Think of the bins as follows. There are $$N$$ bins, bin $$k$$ represents frequen
 This process is extended easily for several objects. Suppose there are three objects at ranges $$R_1$$, $$R_2$$, and $$R_3.$$ Each object will reflect the TX chirp with its own delay, tone frequency, and phase, and the mixer output is the sum of the three tones. Since the FFT is linear, the spectrum of a sum is the sum of the spectra. Each tone contributes its own peak. If any two objects are less than the range resolution apart, their peaks merge to one peak. Otherwise, each peak will represent one object. In this example, three objects at ranges $$R_1$$, $$R_2$$, and $$R_3$$. 
 
 
-# Doppler FFT
+## Doppler FFT and Velocity Resolution
+Now that we can "resolve objects in range" (tell objects with seperation greater than the range resolution apart), the Doppler FFT answers how we can resolve objects in velocity. 
 
+<p align="center">
+<img src="/assets/images/RT_delay.png" alt="roundtrip_delay" width="600">
+</p>
+
+
+<p align="center">
+<img src="/assets/images/doppler_FFT.png" alt="doppler_FFT" width="600">
+</p>
 
 
 
