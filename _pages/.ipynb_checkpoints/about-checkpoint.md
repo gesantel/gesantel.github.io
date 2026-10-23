@@ -29,18 +29,17 @@ Abstract: We show that like the classical Schur algebra, the matroidal Schur alg
 **BS, Applied Mathematics, Cognitive Science** — University of California, San Diego, 2014
 
 ## Professional Experience
-**Independent Consultant**, July 2026 - Present
-- Model and Data Drift Evaluation : Diagnose model degradation using Evidently. Resolve or submit request to data engineer for schema or formatting changes. Collaborate with ML ops to recommend or modify rule-based checks and retraining schedule. Evaluating canaried retrained models. 
-- End-to-End Data Consulting: Architect comprehensive Scopes of Work (SOW), data processing using Google Sheets or BigQuery, and deliver actionable business insights via Tableau and Google Slides.
+
   
-**AI Trainer, Handshake AI**, February 2026 - June 2026
+**AI Trainer (Contract), Handshake AI**, February 2026 - June 2026
 - Validated LLM outputs on graduate-level mathematical proofs for correctness, clarity, and rigor.
 - Recognized by project managers for output, attention to detail, and breadth of subject-matter expertise.
+- Left to focus on ML.
   
 **Senior Ops Analyst, Zenefits**, October 2014 - June 2016
 - Automated waiver collection and processing with Python scripting, replacing two contractors and saving $80,000 per
 year.
-- Provided data-informed business recommendations to c-suite using SQL-based visualizations and Google Sheets.
+- Provided data-informed business recommendations using SQL-based visualizations and Google Sheets.
 - Partnered with engineering and product teams to translate API and data specifications into operational workflows.
 - Deftly resolved customer escalations through troubleshooting and coordination with customer-facing teams.
 - Managed technical relationships with external partners and maintained data integration pipelines.
@@ -56,9 +55,23 @@ year.
 - Mentored students, managed academic accommodations, and provided individualized support.
 - **Winner Math Department Outstanding Teaching Award for 2024-2025.**
   
-**Remedial Math Instructor , San Francisco State University**, August 2016 – May 2018
+**Graduate Teaching Assistant, University of Pennsylvania**, August 2019 - May 2020
+- Held discussion for Calculus II and grader for Number Theory. Assisted students in an accelerated pace course design.
+  
+**Remedial Math Instructor, San Francisco State University**, August 2016 – May 2018
 - Taught remedial mathematics courses, building foundational skills for students transitioning into college-level coursework.
 
+## Misc. Experience
+**ARC 35 Facilitator, University of California, Riverside**, August 2022 -December 2024
+- Monitored performance of 200+ remedial math students by running reports and contacting underperformers.
+- Wrote and lead training for 15 undergraduate remedial math lesson leaders.
+- Assisted lab leaders in lesson preparation, and students on course material.
+- Maintained canvas content and Hawkes homework system.
+  
+**GradEdge/Jumstart Coordinator, University of California, Riverside** , Summer 2022
+- Coordinated a 2 month long summer research program for incoming Underrepresented Minority PhD students in STEM. Planned and organized professional development seminar and social events.
+- Mediated student and summer PI issues.
+  
 ## Linkedin
 
  [Connect on Linkedin](https://www.linkedin.com/in/georgesantellano)
