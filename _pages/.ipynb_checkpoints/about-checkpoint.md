@@ -8,7 +8,7 @@ classes: compact-text
 
 ## Background
 
-PhD Mathematician with a specialty in Graph Theory and Representation Theory. Strong believer in growth mindset. I work in Machine Learning and Data Science, focused on turning ambiguous, messy problems into concrete, testable steps using first principles. Originally a Cognitive Science major (before declaring math as a second), I am fascinated by the mind. Former college lacrosse player and avid weight lifter. I love vietnamese iced coffee and I collect mugs from coffee shops.
+I am a PhD Mathematician with a specialty in Graph Theory and Representation Theory. The Growth Mindset is a pillar in my own learning and in my teaching philosophy. I currently work at the intersection of Machine Learning and Data Science where I specialize in turning ambiguous, messy problems into concrete, testable steps using first principles. An Applied Math and Cognitive Science (specializing in computation) double major as an undergrad, my perspective on ML was shaped early on by computational models of neurological processes. I played lacrosse for UCSD and still play men's league when I can. I am a first-generation college grad and am passionate about supporting marginalized populations, most recently by coordinating a summer research program for first-gen primarily minority college grads entering PhD programs. 
 
 ## Skills
 - **Programming:** Python, SQL, MATLAB, R, C
