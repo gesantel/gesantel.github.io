@@ -29,7 +29,8 @@ Abstract: We show that like the classical Schur algebra, the matroidal Schur alg
 **BS, Applied Mathematics, Cognitive Science** — University of California, San Diego, 2014
 
 ## Professional Experience
-
+**Software Engineer - Machine Learning, Noctua Technology, Inc.**, December 2026 - Present
+  
   
 **AI Trainer (Contract), Handshake AI**, February 2026 - June 2026
 - Validated LLM outputs on graduate-level mathematical proofs for correctness, clarity, and rigor.
